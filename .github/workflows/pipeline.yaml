@@ -1,6 +1,7 @@
 name: Pipeline
 run-name: Deploy in live
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -22,6 +23,8 @@ jobs:
       
       - name: Print Message
         run:  echo "Hello word" 
+      - name: Echo File
+        run: cat hola.txt
         
 
 
