@@ -22,6 +22,8 @@ jobs:
       
       - name: Print Message
         run:  echo "Hello word" 
+      - name: Echo File
+        run: cat hola.txt
         
 
 
