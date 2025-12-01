@@ -1,16 +1,23 @@
+name: Pipeline
+run-name: Deploy in live
 on:
   push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/*"
+  pull_request:
     branches:
       - main
       
 
 jobs: 
-  demo:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
-
+      
       - run: ls -la 
       
       - name: Print Message
@@ -19,6 +26,7 @@ jobs:
 
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       -  name: Print Message job2
