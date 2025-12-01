@@ -1,6 +1,7 @@
 name: Pipeline
 run-name: Deploy in live
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
