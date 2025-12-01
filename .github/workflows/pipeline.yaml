@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - main
+      
+
+jobs: 
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - run: ls -la 
+      
+      - name: Print Message
+        run:  echo "Hello word" 
+        
+
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      -  name: Print Message job2
+         run: echo "Hello, word"
+          
+
+
+
+
+
+
