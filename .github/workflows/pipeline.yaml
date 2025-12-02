@@ -24,10 +24,15 @@ jobs:
       - run: ls -la 
       
       - name: Print Message
-        run:  echo "Hello, algo-${{vars.NAME}}-MAS!" 
+        run:  echo "Hello, algo-${{ vars.NAME }}-MAS!" 
+
+      - name: ECHO SECRETO
+        run:  echo "${{ secrets.SECRETO }}" > secreto.txt
         
       - name: Echo File
-        run: cat hola.txt
+        run: |
+              cat hola.txt 
+              cat secreto.txt
         
 
 
