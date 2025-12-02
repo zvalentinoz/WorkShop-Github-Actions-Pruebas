@@ -10,6 +10,8 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "*.md"
       
 
 jobs: 
@@ -23,6 +25,7 @@ jobs:
       
       - name: Print Message
         run:  echo "Hello word" 
+        
       - name: Echo File
         run: cat hola.txt
         
