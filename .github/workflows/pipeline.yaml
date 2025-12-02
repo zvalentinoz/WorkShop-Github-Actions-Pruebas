@@ -16,7 +16,7 @@ on:
 
 jobs: 
   job1:
-    environment: development
+    environment: develop
     runs-on: ubuntu-latest
     steps:
       - name: Print Message job1
