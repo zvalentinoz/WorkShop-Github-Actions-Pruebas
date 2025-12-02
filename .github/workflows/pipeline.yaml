@@ -16,32 +16,24 @@ on:
 
 jobs: 
   job1:
+    environment: development
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-      
-      - run: ls -la 
-      
-      - name: Print Message
-        run:  echo "Hello, algo-${{ vars.NAME }}-MAS!" 
+      - name: Print Message job1
+        run:  echo "Hello, ${{ vars.NAME }}" 
 
       - name: ECHO SECRETO
         run:  echo "${{ secrets.SECRETO }}" > secreto.txt
-        
-      - name: Echo File
-        run: |
-              cat hola.txt 
-              cat secreto.txt
-        
 
-
-  job2:
+  job3:
     needs: job1
     runs-on: ubuntu-latest
     steps:
-      -  name: Print Message job2
-         run: echo "Hello, word"
+      - name: Print Message job2
+        run:  echo "Hello, ${{ vars.NAME }}" 
+
+      - name: ECHO SECRETO
+        run:  echo "${{ secrets.SECRETO }}" > secreto.txt
           
 
 
