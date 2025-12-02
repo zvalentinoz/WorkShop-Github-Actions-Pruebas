@@ -14,7 +14,7 @@ on:
 
 jobs: 
   job1:
-    environment: ${{github.ref == 'main' && 'production' || 'develop'}}
+    environment: ${{github.ref_name == 'main' && 'production' || 'develop'}}
     runs-on: ubuntu-latest
     steps:
       - name: Print Message job1
