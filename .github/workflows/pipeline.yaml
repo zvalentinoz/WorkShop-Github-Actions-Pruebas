@@ -25,7 +25,8 @@ jobs:
       - name: ECHO SECRETO
         run:  echo "${{ secrets.SECRETO }}" > secreto.txt
 
-  job3:
+  job2:
+    environment: production
     needs: job1
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +37,15 @@ jobs:
         run:  echo "${{ secrets.SECRETO }}" > secreto.txt
           
 
+  job3:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message job3
+        run:  echo "Hello, ${{ vars.NAME }}" 
 
+      - name: ECHO SECRETO
+        run:  echo "${{ secrets.SECRETO }}" > secreto.txt
 
 
 
